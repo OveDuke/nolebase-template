@@ -1,12 +1,10 @@
 ---
 layout: home
 sidebar: false
-
 title: OveXds
 titleTemplate: 记录回忆，知识和畅想的地方
-
 hero:
-  name: Ove的百草园
+  name: 我的百草园🥑
   text: 记录回忆，知识和畅想的地方
   tagline: 你好呀，这里是OveXds的数字花园，欢迎查阅和交流思想！
   image:
@@ -19,10 +17,9 @@ hero:
     - theme: alt
       text: GitHub 上浏览
       link: https://github.com/nolebase/nolebase
-
 features:
   - title: 关于我
-    details: 学业：CQU·机械设计制造及其自动化·本科\n  爱好：散步·乒乓·听歌·读书
+    details: 学业：CQU·机械设计制造及其自动化·本科      爱好：散步·乒乓·听歌·读书
     icon: 🌈
   - title: 皆为 Markdown
     details: 使用 Markdown 和 Markdown 拓展语法编写和记录笔记，每一个页面都是 Markdown 文件。
