@@ -19,8 +19,7 @@ hero:
       link: https://github.com/nolebase/nolebase
 features:
   - title: 关于我
-    details: 学业：CQU·机械设计制造及其自动化·本科      
-    爱好：散步·乒乓·听歌·读书
+    details: 学业：CQU·机自·本科    爱好：散步·乒乓·听歌·读书
     icon: 🌈
   - title: 皆为 Markdown
     details: 使用 Markdown 和 Markdown 拓展语法编写和记录笔记，每一个页面都是 Markdown 文件。
