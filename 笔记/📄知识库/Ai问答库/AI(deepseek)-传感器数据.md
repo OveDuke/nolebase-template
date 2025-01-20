@@ -1,10 +1,10 @@
->[!Question]+ 对于液体火箭发动机的信号提取，需要安装一些传感器进行采集，下面一段字是发动机数据的表头，请告诉我具体含义：
+>Question: 对于液体火箭发动机的信号提取，需要安装一些传感器进行采集，下面一段字是发动机数据的表头，请告诉我具体含义：
 Time         Pb 4 b         Pb 4 c          Pb 8          Pcj           Pd         Pecb         Pefb         Pefq         Peoq          Pfx         Pfx 2          Pic          Pif         Pif 2         Pifq        Pifq 2        Pihfc        Pihoc          Pio         Pio 1         Pio 2         Pioq        Pioq 2          Pox         Pox 2          Psb         Tecb        Tihfc          Tio         Tioq        Tioq 2         Twc 1         Twc 2         Twc 3         Twc 4         Twc 5         Twc 6         Twc 7         Twc 8          qmf         qmf 2         qmf 3          qmo         qmo 2
 
 
 >这段表头是液体火箭发动机在测试或运行过程中采集的传感器数据，每个字段代表不同的测量参数。以下是各字段的可能含义：
 
->[!传感器数据]-
+>传感器数据
 > 1. **Time**：时间戳，表示数据采集的时间点。
 > 
 > 2. **Pb 4 b, Pb 4 c, Pb 8**：可能是不同位置的燃烧室压力传感器（Pressure in Combustion Chamber）的测量值，b、c、8 等后缀可能表示不同的传感器位置或编号。
