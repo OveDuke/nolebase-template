@@ -124,7 +124,18 @@ export default defineConfig({
     // Proxying Plausible through Netlify | Plausible docs
     // https://plausible.io/docs/proxy/guides/netlify
     ['script', { 'defer': 'true', 'data-domain': 'nolebase.ayaka.io', 'data-api': '/api/v1/page-external-data/submit', 'src': '/assets/page-external-data/js/script.js' }],
+      // 添加语雀 SVG 图标
+      [
+        'link',
+        {
+          rel: 'icon',
+          href: '/icons/yuque.svg',
+          type: 'image/svg+xml',
+          id: 'yuque-icon',
+        },
+      ],
   ],
+
   themeConfig: {
     outline: { label: '页面大纲', level: 'deep' },
     darkModeSwitchLabel: '切换主题',
@@ -135,6 +146,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: githubRepoLink },
       { icon: 'discord', link: discordLink },
+      { icon: 'yuque', link: 'https://www.yuque.com/ovexds' }, // 添加语雀链接
     ],
     footer: {
       message: '用 <span style="color: #e25555;">&#9829;</span> 撰写',
