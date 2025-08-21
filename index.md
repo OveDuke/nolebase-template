@@ -4,7 +4,7 @@ sidebar: true
 title: Xds2003
 titleTemplate: 记录回忆，知识和畅想的地方
 hero:
-  name: 我的 Obsidian
+  name: My Obsidian Vault
   text: 记录知识和收获的地方
   tagline: 你好，这是我的数字花园，欢迎查阅和交流思想！
   image:
