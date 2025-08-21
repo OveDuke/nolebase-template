@@ -4,11 +4,11 @@ sidebar: true
 title: Xds2003
 titleTemplate: 记录回忆，知识和畅想的地方
 hero:
-  name: Obsidian Digital Garden
+  name: Obsidian
   text: 记录知识和收获的地方
   tagline: 你好，这是我的数字花园，欢迎查阅和交流思想！
   image:
-    src: /obsidian-490x530.png
+    src: /Obsidian.png
     alt: Vitest
   actions:
     - theme: brand
