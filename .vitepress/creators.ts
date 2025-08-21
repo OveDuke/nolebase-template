@@ -27,7 +27,7 @@ export const creators: Creator[] = [
     desc: '分享网页中的知识库，负责数字花园的搭建',
     links: [
       { type: 'github', icon: 'github', link: 'https://github.com/OveDuke' },
-      { type: 'yuque', icon: '/yuque.svg', link: 'https://www.yuque.com/ovexds' },
+      { type: 'yuque', icon: '/icons/yuque.svg', link: 'https://www.yuque.com/ovexds' },
     ],
     nameAliases: ['Ove', '欧维', 'Ou Wei'],
     emailAliases: ['ovexds@163.com'],
