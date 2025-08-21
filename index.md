@@ -8,7 +8,7 @@ hero:
   text: 记录知识和收获的地方
   tagline: 你好，这是我的数字花园，欢迎查阅和交流思想！
   image:
-    src: /obsidian.svg
+    src: /icons/obsidian.svg
     alt: Vitest
   actions:
     - theme: brand
@@ -29,7 +29,7 @@ features:
     icon: 🚀
   - title: 由 Obsidian 驱动
     details: 强大的知识库管理工具，<br>支持花样繁多的插件和拓展，<br>让知识管理变得更加简单。
-    icon: /obsidian2.svg
+    icon: /icons/obsidian2.svg
 ---
 
 <HomePage />
