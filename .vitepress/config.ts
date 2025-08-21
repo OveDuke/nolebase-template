@@ -129,9 +129,9 @@ export default defineConfig({
         'link',
         {
           rel: 'icon',
-          href: '/icons/yuque.svg',
+          href: '/icons/obsidian.svg',
           type: 'image/svg+xml',
-          id: 'yuque-icon',
+          id: 'obsidian-icon',
         },
       ],
   ],
@@ -146,8 +146,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: githubRepoLink },
       { icon: 'discord', link: discordLink },
-      { icon: 'yuque', link: 'https://www.yuque.com/ovexds' }, // 添加语雀链接
-    ],
+      ],
     footer: {
       message: '用 <span style="color: #e25555;">&#9829;</span> 撰写',
       copyright:
