@@ -3,13 +3,13 @@
     "short_name": "\u732b\u97f3\u77e5\u8bc6\u5e93",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
+            "src": "/obsidian-179x190.png",
+            "sizes": "179x190",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
+            "src": "/obsidian-490x530.png",
+            "sizes": "490x530",
             "type": "image/png"
         }
     ],

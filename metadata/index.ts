@@ -1,5 +1,5 @@
 /** 文本 */
-export const siteName = 'Notebase'
+export const siteName = 'Obsidian'
 export const siteShortName = 'Xds2003'
 export const siteDescription = '记录回忆，知识和畅想的地方'
 
