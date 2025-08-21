@@ -4,7 +4,7 @@ sidebar: true
 title: Xds2003
 titleTemplate: 记录回忆，知识和畅想的地方
 hero:
-  name: Obsidian
+  name: 我的 Obsidian
   text: 记录知识和收获的地方
   tagline: 你好，这是我的数字花园，欢迎查阅和交流思想！
   image:
@@ -19,7 +19,7 @@ hero:
       link: https://github.com/nolebase/nolebase
 features:
   - title: 关于我
-    details: 本科:CQU·机自<br>研究生:XJTU·机械工程<br>爱好:散步·乒乓·听歌·读书
+    details: 本科:CQU·机械设计制造及其自动化<br>研究生:XJTU·机械工程<br>爱好:散步·乒乓·听歌·读书<br>邮箱:ovexds@163.com
     icon: 🌈
   - title: 皆为 Markdown
     details: 使用 Markdown 和拓展语法<br>编写和记录笔记
