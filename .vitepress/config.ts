@@ -177,45 +177,43 @@ export default defineConfig({
         // Add title ang tags field in frontmatter to search
         // You can exclude a page from search by adding search: false to the page's frontmatter.
         _render(src, env, md) {
-          // without `md.render(src, env)`, the some information will be missing from the env.
-          let html = md.render(src, env)
-          let tagsPart = ''
-          let headingPart = ''
-          let contentPart = ''
-          let fullContent = ''
-          const sortContent = () => [headingPart, tagsPart, contentPart] as const
-          let { frontmatter, content } = env
+  // without `md.render(src, env)`, the some information will be missing from the env.
+  let html = md.render(src, env)
+  let tagsPart = ''
+  let headingPart = ''
+  let contentPart = src  // 默认使用原始内容
+  let fullContent = ''
+  const sortContent = () => [headingPart, tagsPart, contentPart] as const
+  let { frontmatter, content } = env
 
-          if (!frontmatter)
-            return html
+  // 即使没有 frontmatter 也应该处理内容
+  if (frontmatter && frontmatter.search === false)
+    return ''
 
-          if (frontmatter.search === false)
-            return ''
+  // 确保 contentPart 有正确的内容
+  contentPart = content || src
 
-          contentPart = content ||= src
+  const headingMatch = contentPart.match(/^#{1} .*/m)
+  const hasHeading = !!(headingMatch && headingMatch[0] && headingMatch.index !== undefined)
 
-          const headingMatch = content.match(/^#{1} .*/m)
-          const hasHeading = !!(headingMatch && headingMatch[0] && headingMatch.index !== undefined)
+  if (hasHeading) {
+    const headingEnd = headingMatch.index! + headingMatch[0].length
+    headingPart = contentPart.slice(0, headingEnd)
+    contentPart = contentPart.slice(headingEnd)
+  }
+  else if (frontmatter && frontmatter.title) {
+    headingPart = `# ${frontmatter.title}`
+  }
 
-          if (hasHeading) {
-            const headingEnd = headingMatch.index! + headingMatch[0].length
-            headingPart = content.slice(0, headingEnd)
-            contentPart = content.slice(headingEnd)
-          }
-          else if (frontmatter.title) {
-            headingPart = `# ${frontmatter.title}`
-          }
+  const tags = frontmatter?.tags
+  if (tags && Array.isArray(tags) && tags.length)
+    tagsPart = `Tags: #${tags.join(', #')}`
 
-          const tags = frontmatter.tags
-          if (tags && Array.isArray(tags) && tags.length)
-            tagsPart = `Tags: #${tags.join(', #')}`
+  fullContent = sortContent().filter(Boolean).join('\n\n')
+  html = md.render(fullContent, env)
 
-          fullContent = sortContent().filter(Boolean).join('\n\n')
-
-          html = md.render(fullContent, env)
-
-          return html
-        },
+  return html
+},
       },
     },
     nav: [
