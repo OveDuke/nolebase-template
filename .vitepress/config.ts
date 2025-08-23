@@ -176,43 +176,30 @@ export default defineConfig({
 
         // Add title ang tags field in frontmatter to search
         // You can exclude a page from search by adding search: false to the page's frontmatter.
-        _render(src, env, md) {
-  // without `md.render(src, env)`, the some information will be missing from the env.
-  let html = md.render(src, env)
-  let tagsPart = ''
-  let headingPart = ''
-  let contentPart = src  // 默认使用原始内容
-  let fullContent = ''
-  const sortContent = () => [headingPart, tagsPart, contentPart] as const
-  let { frontmatter, content } = env
-
-  // 即使没有 frontmatter 也应该处理内容
-  if (frontmatter && frontmatter.search === false)
+  _render(src, env, md) {
+  const { frontmatter, content } = env
+  
+  // 如果明确设置了不搜索，则返回空
+  if (frontmatter?.search === false) {
     return ''
-
-  // 确保 contentPart 有正确的内容
-  contentPart = content || src
-
-  const headingMatch = contentPart.match(/^#{1} .*/m)
-  const hasHeading = !!(headingMatch && headingMatch[0] && headingMatch.index !== undefined)
-
-  if (hasHeading) {
-    const headingEnd = headingMatch.index! + headingMatch[0].length
-    headingPart = contentPart.slice(0, headingEnd)
-    contentPart = contentPart.slice(headingEnd)
   }
-  else if (frontmatter && frontmatter.title) {
-    headingPart = `# ${frontmatter.title}`
+  
+  let searchContent = ''
+  
+  // 添加标题
+  if (frontmatter?.title) {
+    searchContent += `# ${frontmatter.title}\n\n`
   }
-
-  const tags = frontmatter?.tags
-  if (tags && Array.isArray(tags) && tags.length)
-    tagsPart = `Tags: #${tags.join(', #')}`
-
-  fullContent = sortContent().filter(Boolean).join('\n\n')
-  html = md.render(fullContent, env)
-
-  return html
+  
+  // 添加标签
+  if (frontmatter?.tags && Array.isArray(frontmatter.tags) && frontmatter.tags.length) {
+    searchContent += `Tags: #${frontmatter.tags.join(', #')}\n\n`
+  }
+  
+  // 添加正文内容
+  searchContent += content || src
+  
+  return md.render(searchContent, env)
 },
       },
     },
