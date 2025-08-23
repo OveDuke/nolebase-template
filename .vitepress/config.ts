@@ -173,34 +173,6 @@ export default defineConfig({
             },
           },
         },
-
-        // Add title ang tags field in frontmatter to search
-        // You can exclude a page from search by adding search: false to the page's frontmatter.
-  _render(src, env, md) {
-  const { frontmatter, content } = env
-  
-  // 如果明确设置了不搜索，则返回空
-  if (frontmatter?.search === false) {
-    return ''
-  }
-  
-  let searchContent = ''
-  
-  // 添加标题
-  if (frontmatter?.title) {
-    searchContent += `# ${frontmatter.title}\n\n`
-  }
-  
-  // 添加标签
-  if (frontmatter?.tags && Array.isArray(frontmatter.tags) && frontmatter.tags.length) {
-    searchContent += `Tags: #${frontmatter.tags.join(', #')}\n\n`
-  }
-  
-  // 添加正文内容
-  searchContent += content || src
-  
-  return md.render(searchContent, env)
-},
       },
     },
     nav: [
